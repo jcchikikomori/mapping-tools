@@ -5,15 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-		<!-- Leaflet CSS -->
-		<link rel="stylesheet" href="../bower_components/leaflet-dist/leaflet.css" />
 		<!-- Custom Styles -->
 		<link rel="stylesheet" href="../misc.css" />
 		<link rel="stylesheet" href="custom.css" />
 	</head>
 	<body>
-		<!-- Leaflet lib first -->
-		<script src="../bower_components/leaflet-dist/leaflet.js"></script>
 		<!-- Then the maps -->
 		<div class="container">
 			<div class="panel panel-default">
@@ -22,11 +18,40 @@
 						<b>mapping-tools</b><p>prepared by <a target="_blank" href="https://github.com/jccultima123/mapping-tools">jccultima123</a></p>
 					</div>
 					<div class="btn-group pull-right" role="group" aria-label="...">
+					  <a href=".." class="btn btn-default"><i class="glyphicon glyphicon-arrow-left"></i></a>
 					  <a href="../leaflet" class="btn btn-default">Leaflet JS</a>
 					  <a class="btn btn-default active">Google Maps</a>
 					</div><br /><br />
 				</div>
-				<div class="panel-body" id="map"><h1 class="text-center">Coming Soon</h1></div>
+				<!-- Map Library first -->
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiXIyV3bnPU3FmT2dXBOPZYOjUfEke9Qc&callback=initMap" async defer></script>
+				<div class="panel-body" id="map">
+					<!-- <h1 class="text-center">Coming Soon</h1> -->
+					<script>
+						var map;
+						function initMap() {
+						  var location = {lat: 14.572182, lng: 121.060615};
+						  map = new google.maps.Map(document.getElementById('map'), {
+						    center: location,
+						    zoom: 15
+						  });
+
+						  var marker = new google.maps.Marker({
+						    position: location,
+						    map: map,
+						    title: 'we are 8Liens!'
+						  });
+
+						  var location2 = {lat: 14.572566, lng: 121.060341};
+
+						  var marker = new google.maps.Marker({
+						    position: location2,
+						    map: map,
+						    title: 'Dito kami kakain!'
+						  });
+						}
+				    </script>
+				</div>
 				<div class="panel-footer">
 					<h4><a target="_blank" href="http://maps.google.com/">Google Maps</a></h4>
 					<p>by Google Inc.</p>
@@ -36,6 +61,5 @@
 				</div>
 			</div>
 		</div>
-		<script src="map.js"></script>
 	</body>
 </html>

@@ -28,9 +28,14 @@
 				<div class="panel-body" id="map">
 					<!-- <h1 class="text-center">Coming Soon</h1> -->
 					<script>
+
 						var map;
+						var long = 121.092648;
+						var lat = 14.586028;
+
 						function initMap() {
-						  var location = {lat: 14.572182, lng: 121.060615};
+							// var location = {lat: 14.572182, lng: 121.060615};
+						  var location = {lat: lat, lng: long};
 						  map = new google.maps.Map(document.getElementById('map'), {
 						    center: location,
 						    zoom: 15
@@ -39,17 +44,19 @@
 						  var marker = new google.maps.Marker({
 						    position: location,
 						    map: map,
-						    title: 'we are 8Liens!'
+						    title: 'My Home!'
 						  });
 
-						  var location2 = {lat: 14.572566, lng: 121.060341};
+							// var location2 = {lat: 14.572566, lng: 121.060341};
+						  // var location2 = {lat: lat, lng: long};
 
-						  var marker = new google.maps.Marker({
-						    position: location2,
-						    map: map,
-						    title: 'Dito kami kakain!'
-						  });
+						  // var marker = new google.maps.Marker({
+						  //   position: location2,
+						  //   map: map,
+						  //   title: 'Dito kami kakain!'
+						  // });
 						}
+
 				    </script>
 				</div>
 				<div class="panel-footer">
